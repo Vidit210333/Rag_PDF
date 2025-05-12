@@ -1,24 +1,3 @@
-# from langchain_community.vectorstores import FAISS
-# from langchain.prompts import PromptTemplate
-# import os
-# from PyPDF2 import PdfReader
-# import requests
-# from bs4 import BeautifulSoup
-# # from dotenv import load_dotenv
-# import google.generativeai as genai
-# from langchain.text_splitter import RecursiveCharacterTextSplitter
-# from langchain_google_genai import GoogleGenerativeAIEmbeddings
-# from langchain_google_genai import ChatGoogleGenerativeAI
-# from langchain.chains.question_answering import load_qa_chain
-
-# #saved the Google api key in env file
-# # load_dotenv()
-# # os.getenv("GOOGLE_API_KEY")
-# os.environ["GOOGLE_API_KEY"] = 'AIzaSyCvw_aGHyJtLxpZ4Ojy8EyaEDtPOzZM29s'
-
-# # Retrieve the Google API key from the environment variable
-# google_api_key = os.getenv("GOOGLE_API_KEY")
-
 import os
 from PyPDF2 import PdfReader
 import requests
@@ -79,13 +58,8 @@ def get_conversational_chain():
     {question}
 
     Answer:
-    """
-
-    # model = ChatGoogleGenerativeAI(model="models/gemini-1.5-flash-latest", temperature=0.3)
-    # prompt = PromptTemplate(template=prompt_template, input_variables=["context", "question"])
-    # chain = load_qa_chain(model, chain_type="stuff", prompt=prompt)
-    
-    model = ChatGoogleGenerativeAI(model="models/gemini-2.0-flash", temperature=0.3)
+    """    
+    model = ChatGoogleGenerativeAI(model="models/gemini-2.0-flash", temperature=0.5)
     prompt = PromptTemplate(template=prompt_template, input_variables=["context", "question"])
     chain = load_qa_chain(model, chain_type="stuff", prompt=prompt)
     return chain
