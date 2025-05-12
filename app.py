@@ -55,8 +55,13 @@ from io import BytesIO
 import os
 import tempfile
 
-# Import your functions here
-# from your_script import extract_text_from_pdf, ..., user_input, get_text_chunks, get_vector_store
+from helper import (
+    extract_text_from_pdf,
+    extract_text_from_url,
+    get_text_chunks,
+    get_vector_store,
+    user_input,
+)
 
 # Replace this line with your real secret method
 "GOOGLE_API_KEY" = 'AIzaSyCROWEOFoXucS-USWu_nG3184_IbHZJo3g'
