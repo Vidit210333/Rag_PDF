@@ -64,7 +64,7 @@ from helper import (
 )
 
 # Replace this line with your real secret method
-"GOOGLE_API_KEY" = 'AIzaSyCROWEOFoXucS-USWu_nG3184_IbHZJo3g'
+os.environ["GOOGLE_API_KEY"] = "AIzaSyCROWEOFoXucS-USWu_nG3184_IbHZJo3g"
 
 def main():
     st.title("📚 PDF + URL Query Chatbot using Google Gemini")
